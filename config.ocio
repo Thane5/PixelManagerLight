@@ -421,7 +421,232 @@ colorspaces:
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear CIE-XYZ I-D65}
         - !<BuiltinTransform> {style: "UTILITY - ACES-AP1_to_CIE-XYZ-D65_BFD", direction: inverse}
 
+  - !<ColorSpace> #Linear FilmLight E-Gamut
+    name: Linear FilmLight E-Gamut
+    aliases: [Linear E-Gamut I-D65, "FilmLight: Linear - E-Gamut"]
+    family: Colourspaces
+    equalitygroup:
+    bitdepth: 32f
+    description: |
+      Linear E-Gamut with illuminant D65 white point
+    isdata: false
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear CIE-XYZ I-D65}
+        - !<MatrixTransform> {matrix: [ 0.7053968501, 0.1640413283, 0.08101774865, 0, 0.2801307241, 0.8202066415, -0.1003373656, 0, -0.1037815116, -0.07290725703, 1.265746519, 0, 0, 0, 0, 1], direction: inverse}
+
+  - !<ColorSpace> #Linear DaVinci WideGamut
+    name: Linear DaVinci WideGamut
+    aliases: [lin_davinci_widegamut]
+    family: Colourspaces
+    equalitygroup: ""
+    bitdepth: 32f
+    description: Open Domain Linear DaVinci WideGamut colorspace used for DaVinciResolve interchange
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear CIE-XYZ I-D65}
+        - !<MatrixTransform> {matrix: [1.5166720420, -0.2814780479, -0.1469636332, 0.0000000000, -0.4649171012, 1.2514237757, 0.1748846089, 0.0000000000, 0.0648490471, 0.1091393437, 0.7614146215, 0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000, 1.0000000000]}
+
+
 #Camera Linear Stuff    
+  - !<ColorSpace> #Linear ARRI Wide Gamut 3
+    name: Linear ARRI Wide Gamut 3
+    aliases: [lin_arri_wide_gamut_3, Input - ARRI - Linear - ALEXA Wide Gamut, lin_alexawide]
+    family: Camera Colourspaces
+    equalitygroup: ""
+    bitdepth: 32f
+    description: Open Domain Linear AWG 3
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear CIE-XYZ I-D65}
+        - !<MatrixTransform> {matrix: [1.7890660000, -0.4825340000, -0.2000760000, 0.0000000000, -0.6398490000, 1.3964000000, 0.1944320000, 0.0000000000, -0.0415320000, 0.0823350000, 0.8788680000, 0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000, 1.0000000000]}
+        
+  - !<ColorSpace> #Linear ARRI Wide Gamut 4
+    name: Linear ARRI Wide Gamut 4
+    aliases: [lin_arri_wide_gamut_4, lin_awg4]
+    family: Camera Colourspaces
+    equalitygroup: ""
+    bitdepth: 32f
+    description: Open Domain Linear AWG 4 AKA ARRI Reveal
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear CIE-XYZ I-D65}
+        - !<MatrixTransform> {matrix: [1.5092154723, -0.2505973453, -0.1688114753, 0.0000000000, -0.4915454517, 1.3612455460, 0.0972829420, 0.0000000000, 0.0000000000, 0.0000000000, 0.9182249511, 0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000, 1.0000000000]}
+
+  - !<ColorSpace> #Linear BMD WideGamut Gen5
+    name: Linear BMD WideGamut Gen5
+    aliases: [lin_bmd_widegamut_gen5]
+    family: Camera Colourspaces
+    equalitygroup: ""
+    bitdepth: 32f
+    description: Open Domain Linear BMD WideGamut Gen5
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear CIE-XYZ I-D65}
+        - !<MatrixTransform> {matrix: [1.8663823404, -0.5183973429, -0.2346098094, 0.0000000000, -0.6003424925, 1.3781489625, 0.1767318303, 0.0000000000, 0.0024519937, 0.0863996742, 0.8369427073, 0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000, 1.0000000000]}
+
+  - !<ColorSpace> #Linear CinemaGamut D55
+    name: Linear CinemaGamut D55
+    aliases: [lin_cinemagamut_d55, Input - Canon - Linear - Canon Cinema Gamut Daylight, lin_canoncgamutday]
+    family: Camera Colourspaces
+    equalitygroup: ""
+    bitdepth: 32f
+    description: Open Domain Linear Canon CinemaGamut Daylight
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear CIE-XYZ I-D65}
+        - !<MatrixTransform> {matrix: [1.4898182749, -0.2608959022, -0.1424265218, 0.0000000000, -0.4581665745, 1.2616277831, 0.1596236316, 0.0000000000, -0.0703496677, 0.2215576672, 0.7761816036, 0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000, 1.0000000000]}
+
+  - !<ColorSpace> #Linear V-Gamut
+    name: Linear V-Gamut
+    aliases: [lin_vgamut, Input - Panasonic - Linear - V-Gamut]
+    family: Camera Colourspaces
+    equalitygroup: ""
+    bitdepth: 32f
+    description: Open Domain Linear Panasonic V-Gamut colourspace
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear CIE-XYZ I-D65}
+        - !<MatrixTransform> {matrix: [1.5890120000, -0.3132040000, -0.1809650000, 0.0000000000, -0.5340530000, 1.3960110000, 0.1024580000, 0.0000000000, 0.0111790000, 0.0031940000, 0.9055350000, 0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000, 1.0000000000]}
+
+  - !<ColorSpace> #Linear REDWideGamutRGB
+    name: Linear REDWideGamutRGB
+    aliases: []
+    family: Camera Colourspaces
+    equalitygroup: ""
+    bitdepth: 32f
+    description: Open Domain Linear RED WideGamutRGB colorspace used for IPP2
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear CIE-XYZ I-D65}
+        - !<MatrixTransform> {matrix: [1.4128066123, -0.1775223662, -0.1517703764, 0.0000000000, -0.4862031858, 1.2906962108, 0.1574002837, 0.0000000000, -0.0371387758, 0.2863757596, 0.6876796053, 0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000, 1.0000000000]}
+
+  - !<ColorSpace> #Linear S-Gamut
+    name: Linear S-Gamut
+    aliases: [lin_sgamut, Input - Sony - Linear - S-Gamut]
+    family: Camera Colourspaces
+    equalitygroup: ""
+    bitdepth: 32f
+    description: Open Domain Linear Sony S-Gamut (so called "camera native") colourspace
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear CIE-XYZ I-D65}
+        - !<MatrixTransform> {matrix: [1.5073998991, -0.2458221374, -0.1716116808, 0.0000000000, -0.5181517271, 1.3553912409, 0.1258786682, 0.0000000000, 0.0155116982, -0.0078727714, 0.9119163656, 0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000, 1.0000000000]}
+
+  - !<ColorSpace> #Linear S-Gamut3
+    name: Linear S-Gamut3
+    aliases: [lin_sgamut3, Input - Sony - Linear - S-Gamut3]
+    family: Camera Colourspaces
+    equalitygroup: ""
+    bitdepth: 32f
+    description: Open Domain Linear Sony S-Gamut3 (so called "camera native") colourspace
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear CIE-XYZ I-D65}
+        - !<MatrixTransform> {matrix: [1.5073998991, -0.2458221374, -0.1716116808, 0.0000000000, -0.5181517271, 1.3553912409, 0.1258786682, 0.0000000000, 0.0155116982, -0.0078727714, 0.9119163656, 0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000, 1.0000000000]}
+
+  - !<ColorSpace> #Linear S-Gamut3.Cine
+    name: Linear S-Gamut3.Cine
+    aliases: [lin_sgamut3cine, Input - Sony - Linear - S-Gamut3.Cine]
+    family: Camera Colourspaces
+    equalitygroup: ""
+    bitdepth: 32f
+    description: Open Domain Linear Sony S-Gamut3.cine colourspace
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear CIE-XYZ I-D65}
+        - !<MatrixTransform> {matrix: [1.8467789693, -0.5259861230, -0.2105452114, 0.0000000000, -0.4441532629, 1.2594429028, 0.1493999729, 0.0000000000, 0.0408554212, 0.0156408893, 0.8682072487, 0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000, 1.0000000000]}
+
+  - !<ColorSpace> #Linear Venice S-Gamut3
+    name: Linear Venice S-Gamut3
+    aliases: [lin_venice_sgamut3, Input - Sony - Linear - Venice S-Gamut3]
+    family: Camera Colourspaces
+    equalitygroup: ""
+    bitdepth: 32f
+    description: Open Domain Linear Sony Venice S-Gamut3 (so called "camera native") colourspace
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear CIE-XYZ I-D65}
+        - !<MatrixTransform> {matrix: [1.3902639751, -0.1355735343, -0.1706163892, 0.0000000000, -0.4977719313, 1.3287678225, 0.1325388483, 0.0000000000, 0.0320531907, -0.0204380261, 0.9090178003, 0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000, 1.0000000000]}
+
+  - !<ColorSpace> #Linear Venice S-Gamut3.Cine
+    name: Linear Venice S-Gamut3.Cine
+    aliases: [lin_venice_sgamut3cine, Input - Sony - Linear - Venice S-Gamut3.Cine]
+    family: Camera Colourspaces
+    equalitygroup: ""
+    bitdepth: 32f
+    description: Open Domain Linear Sony Venice S-Gamut3.cine colourspace
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear CIE-XYZ I-D65}
+        - !<MatrixTransform> {matrix: [1.7070112863, -0.3930824760, -0.2106008781, 0.0000000000, -0.4275085831, 1.2369444116, 0.1555322984, 0.0000000000, 0.0541778810, 0.0058060091, 0.8656109395, 0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000, 1.0000000000]}
+
+  - !<ColorSpace> #Linear D-Gamut
+    name: Linear D-Gamut
+    aliases: []
+    family: Camera Colourspaces
+    equalitygroup: ""
+    bitdepth: 32f
+    description: Open Domain Linear DJI D-Gamut colourspace
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear CIE-XYZ I-D65}
+        - !<MatrixTransform> {matrix: [1.7257000000, -0.4314000000, -0.1917000000, 0.0000000000, -0.6025000000, 1.3906000000, 0.1671000000, 0.0000000000, -0.0156000000, 0.0905000000, 0.8489000000, 0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000, 1.0000000000]}
+
+  - !<ColorSpace> #Linear F-Gamut
+    name: Linear F-Gamut
+    aliases: []
+    family: Camera Colourspaces
+    equalitygroup: ""
+    bitdepth: 32f
+    description: Open Domain Linear Fuji F-Gamut colourspace
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear CIE-XYZ I-D65}
+        - !<MatrixTransform> {matrix: [1.7166511880, -0.3556707838, -0.2533662814, 0.0000000000, -0.6666843518, 1.6164812366, 0.0157685458, 0.0000000000, 0.0176398574, -0.0427706133, 0.9421031212, 0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000, 1.0000000000]}
+
+  - !<ColorSpace> #Linear ProTune
+    name: Linear ProTune
+    aliases: []
+    family: Camera Colourspaces
+    equalitygroup: ""
+    bitdepth: 32f
+    description: Open Domain Linear GoPro ProTune colourspace
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear CIE-XYZ I-D65}
+        - !<MatrixTransform> {matrix: [2.2668965032, -0.8316335863, -0.2965422458, 0.0000000000, -0.3573378318, 1.2433731478, 0.0883889880, 0.0000000000, -0.2182344491, 0.3441751475, 0.7926550062, 0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000, 1.0000000000]}
+
 
 #LOG Stuff
   - !<ColorSpace> #AgX Log
@@ -462,6 +687,79 @@ colorspaces:
         - !<MatrixTransform> {matrix: [0.842479062253094, 0.0784335999999992, 0.0792237451477643, 0, 0.0423282422610123, 0.878468636469772, 0.0791661274605434, 0, 0.0423756549057051, 0.0784336, 0.879142973793104, 0, 0, 0, 0, 1]}
         - !<AllocationTransform> {allocation: lg2, vars: [-12.47393, 4.026069]}
 
+
+  - !<ColorSpace> #DaVinci Intermidiate WideGamut Log
+    name: DaVinci Intermidiate WideGamut Log
+    aliases: [DaVinci Intermidiate WideGamut, davinci_intermediate_widegamut]
+    family: Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: DaVinci Wide Gamut Log used in Resolve with 18.25 stops of dynamic range.
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear DaVinci WideGamut}
+        - !<LogCameraTransform> {log_side_slope: 0.07329248, log_side_offset: 0.51304736, lin_side_offset: 0.0075, lin_side_break: 0.00262409, linear_slope: 10.44426855}
+    to_scene_reference: !<GroupTransform>
+      children:
+        - !<LogCameraTransform> {log_side_slope: 0.07329248, log_side_offset: 0.51304736, lin_side_offset: 0.0075, lin_side_break: 0.00262409, linear_slope: 10.44426855, direction: inverse}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear DaVinci WideGamut, direction: inverse}
+
+  - !<ColorSpace> #T-Log - E-Gamut
+    name: T-Log - E-Gamut
+    aliases: ["FilmLight: T-Log - E-Gamut"]
+    family: Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: FilmLights T-Log - E-Gamut grading space
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear E-Gamut I-D65}
+        - !<FileTransform> {src: TLog_2_Linear.spi1d, interpolation: linear, direction: inverse}
+    to_scene_reference: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: TLog_2_Linear.spi1d, interpolation: linear}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear E-Gamut I-D65, direction: inverse}
+
+  - !<ColorSpace> #ACEScc
+    name: ACEScc
+    aliases: [ACES - ACEScc, acescc_ap1]
+    family: Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: ACEScc grading space
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ACES2065-1}
+        - !<BuiltinTransform> {style: ACEScc_to_ACES2065-1, direction: inverse}
+    to_scene_reference: !<GroupTransform>
+      children:
+        - !<BuiltinTransform> {style: ACEScc_to_ACES2065-1}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ACES2065-1, direction: inverse}
+
+  - !<ColorSpace> #ACEScct
+    name: ACEScct
+    aliases: [ACES - ACEScct, acescct_ap1]
+    family: Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: ACEScct grading space
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ACES2065-1}
+        - !<BuiltinTransform> {style: ACEScct_to_ACES2065-1, direction: inverse}
+    to_scene_reference: !<GroupTransform>
+      children:
+        - !<BuiltinTransform> {style: ACEScct_to_ACES2065-1}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ACES2065-1, direction: inverse}
+
   - !<ColorSpace> #Filmic Log
     name: Filmic Log
     family: Log Encodings
@@ -480,6 +778,348 @@ colorspaces:
       children:
         - !<AllocationTransform> {allocation: lg2, vars: [-12.473931188, 4.026068812], direction: inverse}
         - !<ColorSpaceTransform> {src: Linear CIE-XYZ E, dst: Linear Rec.709, direction: inverse}
+
+
+#Camera Log Stuff
+  - !<ColorSpace> #ARRI LogC3
+    name: ARRI LogC3
+    aliases: ["ARRI LogC3 (EI800)", arri_logc3_ei800, Input - ARRI - V3 LogC (EI800) - Wide Gamut, logc3ei800_alexawide]
+    family: Camera Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: ARRI LogC3 (EL800) log encoding
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear ARRI Wide Gamut 3}
+        - !<LogCameraTransform> {base: 10, log_side_slope: 0.247189638318671, log_side_offset: 0.385536998692443, lin_side_slope: 5.55555555555556, lin_side_offset: 0.0522722750251688, lin_side_break: 0.0105909904954696}
+    to_scene_reference: !<GroupTransform>
+      children:
+        - !<LogCameraTransform> {base: 10, log_side_slope: 0.247189638318671, log_side_offset: 0.385536998692443, lin_side_slope: 5.55555555555556, lin_side_offset: 0.0522722750251688, lin_side_break: 0.0105909904954696, direction: inverse}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear ARRI Wide Gamut 3, direction: inverse}
+
+  - !<ColorSpace> #ARRI LogC4
+    name: ARRI LogC4
+    aliases: [arri_logc4]
+    family: Camera Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: ARRI ARRI LogC4 log encoding used in Alexa 35
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear ARRI Wide Gamut 4}
+        - !<LogCameraTransform> {log_side_slope: 0.0647954196341293, log_side_offset: -0.295908392682586, lin_side_slope: 2231.82630906769, lin_side_offset: 64, lin_side_break: -0.0180569961199113}
+    to_scene_reference: !<GroupTransform>
+      children:
+        - !<LogCameraTransform> {log_side_slope: 0.0647954196341293, log_side_offset: -0.295908392682586, lin_side_slope: 2231.82630906769, lin_side_offset: 64, lin_side_break: -0.0180569961199113, direction: inverse}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear ARRI Wide Gamut 4, direction: inverse}
+
+  - !<ColorSpace> #BMDFilm WideGamut Gen5 Log
+    name: BMDFilm WideGamut Gen5 Log
+    aliases: [bmdfilm_widegamut_gen5, BMDFilm WideGamut Gen5]
+    family: Camera Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: Black Magic Design widegamut gen 5 used by BlackMagic cameras
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear BMD WideGamut Gen5}
+        - !<LogCameraTransform> {base: 2.71828182845905, log_side_slope: 0.0869287606549122, log_side_offset: 0.530013339229194, lin_side_offset: 0.00549407243225781, lin_side_break: 0.005}
+    to_scene_reference: !<GroupTransform>
+      children:
+        - !<LogCameraTransform> {base: 2.71828182845905, log_side_slope: 0.0869287606549122, log_side_offset: 0.530013339229194, lin_side_offset: 0.00549407243225781, lin_side_break: 0.005, direction: inverse}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear BMD WideGamut Gen5, direction: inverse}
+
+  - !<ColorSpace> #CanonLog2 CinemaGamut D55
+    name: CanonLog2 CinemaGamut D55
+    aliases: [canonlog2_cinemagamut_d55, Input - Canon - Canon-Log2 - Cinema Gamut Daylight, canonlog2_cgamutday]
+    family: Camera Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: CanonLog2 CinemaGamut D55 Daylight
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear CinemaGamut D55}
+        - !<MatrixTransform> {matrix: [0.9525523959, 0.0000000000, 0.0000936786, 0.0000000000, 0.3439664498, 0.7281660966, -0.0721325464, 0.0000000000, 0.0000000000, 0.0000000000, 1.0088251844, 0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000, 1.0000000000]} 
+        - !<BuiltinTransform> {style: CANON_CLOG2-CGAMUT_to_ACES2065-1, direction: inverse}
+    to_scene_reference: !<GroupTransform>
+      children:
+        - !<BuiltinTransform> {style: CANON_CLOG2-CGAMUT_to_ACES2065-1}
+        - !<MatrixTransform> {matrix: [0.9525523959, 0.0000000000, 0.0000936786, 0.0000000000, 0.3439664498, 0.7281660966, -0.0721325464, 0.0000000000, 0.0000000000, 0.0000000000, 1.0088251844, 0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000, 1.0000000000], direction: inverse}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear CinemaGamut D55, direction: inverse}
+
+  - !<ColorSpace> #CanonLog3 CinemaGamut D55
+    name: CanonLog3 CinemaGamut D55
+    aliases: [canonlog3_cinemagamut_d55, Input - Canon - Canon-Log3 - Cinema Gamut Daylight, canonlog3_cgamutday]
+    family: Camera Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: CanonLog3 CinemaGamut D55 Daylight
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ACES2065-1}
+#        - !<MatrixTransform> {matrix: [0.7517177513, 0.1361661972, 0.1098089891, 0.0000000000, 0.0027518416, 1.1067485107, -0.1005322013, 0.0000000000, -0.0095916981, -0.2344128991, 1.3235352905, 0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000, 1.0000000000]}
+        - !<BuiltinTransform> {style: CANON_CLOG3-CGAMUT_to_ACES2065-1, direction: inverse}
+    to_scene_reference: !<GroupTransform>
+      children:
+        - !<BuiltinTransform> {style: CANON_CLOG3-CGAMUT_to_ACES2065-1}
+#        - !<MatrixTransform> {matrix: [0.7517177513, 0.1361661972, 0.1098089891, 0.0000000000, 0.0027518416, 1.1067485107, -0.1005322013, 0.0000000000, -0.0095916981, -0.2344128991, 1.3235352905, 0.0000000000, 0.0000000000, 0.0000000000, 0.0000000000, 1.0000000000], direction: inverse}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: ACES2065-1, direction: inverse}
+
+  - !<ColorSpace> #V-Log V-Gamut
+    name: V-Log V-Gamut
+    aliases: [vlog_vgamut, Input - Panasonic - V-Log - V-Gamut]
+    family: Camera Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: Panasonic V-Log V-Gamut
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear V-Gamut}
+        - !<LogCameraTransform> {base: 10, log_side_slope: 0.241514, log_side_offset: 0.598206, lin_side_offset: 0.00873, lin_side_break: 0.01}
+    to_scene_reference: !<GroupTransform>
+      children:
+        - !<LogCameraTransform> {base: 10, log_side_slope: 0.241514, log_side_offset: 0.598206, lin_side_offset: 0.00873, lin_side_break: 0.01, direction: inverse}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear V-Gamut, direction: inverse}
+
+  - !<ColorSpace> #Log3G10 REDWideGamutRGB
+    name: Log3G10 REDWideGamutRGB
+    aliases: [log3g10_redwidegamutrgb, Input - RED - REDLog3G10 - REDWideGamutRGB, rl3g10_rwg]
+    family: Camera Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: RED Log3G10 RedWideGamutRGB
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear REDWideGamutRGB}
+        - !<LogCameraTransform> {base: 10, log_side_slope: 0.224282, lin_side_slope: 155.975327, lin_side_offset: 2.55975327, lin_side_break: -0.01}
+    to_scene_reference: !<GroupTransform>
+      children:
+        - !<LogCameraTransform> {base: 10, log_side_slope: 0.224282, lin_side_slope: 155.975327, lin_side_offset: 2.55975327, lin_side_break: -0.01, direction: inverse}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear REDWideGamutRGB, direction: inverse}
+
+  - !<ColorSpace> #S-Log2 ITU 709 Matrix
+    name: S-Log2 ITU 709 Matrix
+    aliases: []
+    family: Camera Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: Sony S-Log2 with ITU-709 Matrix optimized for 8bit Sony cameras
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear Rec.709}
+        - !<FileTransform> {src: S-Log2_to_linear.spi1d, interpolation: linear, direction: inverse}
+    to_scene_reference: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: S-Log2_to_linear.spi1d, interpolation: linear}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear Rec.709, direction: inverse}
+
+  - !<ColorSpace> #S-Log2 S-Gamut
+    name: S-Log2 S-Gamut
+    aliases: []
+    family: Camera Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: Sony S-Log2 with (so called "camera native") S-Gamut
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear S-Gamut}
+        - !<FileTransform> {src: S-Log2_to_linear.spi1d, interpolation: linear, direction: inverse}
+    to_scene_reference: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: S-Log2_to_linear.spi1d, interpolation: linear}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear S-Gamut, direction: inverse}
+
+  - !<ColorSpace> #S-Log3 S-Gamut3
+    name: S-Log3 S-Gamut3
+    aliases: [slog3_sgamut3, Input - Sony - S-Log3 - S-Gamut3]
+    family: Camera Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: Sony S-Log3 S-Gamut3 (so called "camera native") for non Venice cameras
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear S-Gamut3}
+        - !<LogCameraTransform> {base: 10, log_side_slope: 0.255620723362659, log_side_offset: 0.410557184750733, lin_side_slope: 5.26315789473684, lin_side_offset: 0.0526315789473684, lin_side_break: 0.01125, linear_slope: 6.62194371177582}
+    to_scene_reference: !<GroupTransform>
+      children:
+        - !<LogCameraTransform> {base: 10, log_side_slope: 0.255620723362659, log_side_offset: 0.410557184750733, lin_side_slope: 5.26315789473684, lin_side_offset: 0.0526315789473684, lin_side_break: 0.01125, linear_slope: 6.62194371177582, direction: inverse}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear S-Gamut3, direction: inverse}
+
+  - !<ColorSpace> #S-Log3 S-Gamut3.Cine
+    name: S-Log3 S-Gamut3.Cine
+    aliases: [slog3_sgamut3.cine, Input - Sony - S-Log3 - S-Gamut3.cine]
+    family: Camera Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: Sony S-Log3 S-Gamut3.cine for non Venice
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear S-Gamut3.cine}
+        - !<LogCameraTransform> {base: 10, log_side_slope: 0.255620723362659, log_side_offset: 0.410557184750733, lin_side_slope: 5.26315789473684, lin_side_offset: 0.0526315789473684, lin_side_break: 0.01125, linear_slope: 6.62194371177582}
+    to_scene_reference: !<GroupTransform>
+      children:
+        - !<LogCameraTransform> {base: 10, log_side_slope: 0.255620723362659, log_side_offset: 0.410557184750733, lin_side_slope: 5.26315789473684, lin_side_offset: 0.0526315789473684, lin_side_break: 0.01125, linear_slope: 6.62194371177582, direction: inverse}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear S-Gamut3.cine, direction: inverse}
+
+  - !<ColorSpace> #S-Log3 Venice S-Gamut3
+    name: S-Log3 Venice S-Gamut3
+    aliases: [slog3_venice_sgamut3, Input - Sony - S-Log3 - Venice S-Gamut3]
+    family: Camera Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: Sony S-Log3 S-Gamut3 for Venice
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear Venice S-Gamut3}
+        - !<LogCameraTransform> {base: 10, log_side_slope: 0.255620723362659, log_side_offset: 0.410557184750733, lin_side_slope: 5.26315789473684, lin_side_offset: 0.0526315789473684, lin_side_break: 0.01125, linear_slope: 6.62194371177582}
+    to_scene_reference: !<GroupTransform>
+      children:
+        - !<LogCameraTransform> {base: 10, log_side_slope: 0.255620723362659, log_side_offset: 0.410557184750733, lin_side_slope: 5.26315789473684, lin_side_offset: 0.0526315789473684, lin_side_break: 0.01125, linear_slope: 6.62194371177582, direction: inverse}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear Venice S-Gamut3, direction: inverse}
+
+  - !<ColorSpace> #S-Log3 Venice S-Gamut3.Cine
+    name: S-Log3 Venice S-Gamut3.cine
+    aliases: [slog3_venice_sgamut3cine, Input - Sony - S-Log3 - Venice S-Gamut3.Cine, slog3_venice_sgamutcine]
+    family: Camera Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: Sony S-Log3 S-Gamut3 for Venice
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear Venice S-Gamut3.Cine}
+        - !<LogCameraTransform> {base: 10, log_side_slope: 0.255620723362659, log_side_offset: 0.410557184750733, lin_side_slope: 5.26315789473684, lin_side_offset: 0.0526315789473684, lin_side_break: 0.01125, linear_slope: 6.62194371177582}
+    to_scene_reference: !<GroupTransform>
+      children:
+        - !<LogCameraTransform> {base: 10, log_side_slope: 0.255620723362659, log_side_offset: 0.410557184750733, lin_side_slope: 5.26315789473684, lin_side_offset: 0.0526315789473684, lin_side_break: 0.01125, linear_slope: 6.62194371177582, direction: inverse}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear Venice S-Gamut3.Cine, direction: inverse}
+
+  - !<ColorSpace> #Apple Log
+    name: Apple Log
+    aliases: []
+    family: Camera Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: Apple Log Format introduced with iPhone15
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear BT.2020 I-D65}
+        - !<FileTransform> {src: Apple_Log_EOTF.spi1d, interpolation: linear, direction: inverse}
+    to_scene_reference: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: Apple_Log_EOTF.spi1d, interpolation: linear}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear BT.2020 I-D65, direction: inverse}
+
+  - !<ColorSpace> #F-Log F-Gamut
+    name: F-Log F-Gamut
+    aliases: []
+    family: Camera Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: Fuji's F-Log F-Gamut
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear F-Gamut}
+        - !<LogCameraTransform> {base: 10, log_side_slope: 0.344676, log_side_offset: 0.790453, lin_side_slope: 0.555556, lin_side_offset: 0.009468, lin_side_break: 0.00089}
+
+  - !<ColorSpace> #F-Log2 F-Gamut
+    name: F-Log2 F-Gamut
+    aliases: []
+    family: Camera Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: Fuji's F-Log2 F-Gamut
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear F-Gamut}
+        - !<LogCameraTransform> {base: 10, log_side_slope: 0.245281, log_side_offset: 0.384316, lin_side_slope: 5.555556, lin_side_offset: 0.064829, lin_side_break: 0.000889}
+
+  - !<ColorSpace> #D-Log D-Gamut
+    name: D-Log D-Gamut
+    aliases: []
+    family: Camera Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: DJI's X5, X7, X9 camera D-Log D-Gamut
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear D-Gamut}
+        - !<FileTransform> {src: D_Log_EOTF.spi1d, interpolation: linear, direction: inverse}   
+    to_scene_reference: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: D_Log_EOTF.spi1d, interpolation: linear}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear D-Gamut, direction: inverse}
+
+  - !<ColorSpace> #ProTune Log
+    name: ProTune Log
+    aliases: []
+    family: Camera Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: GoPro's protune log format
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear ProTune}
+        - !<FileTransform> {src: Protune_Flat_to_linear.spi1d, interpolation: linear, direction: inverse}
+    to_scene_reference: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: Protune_Flat_to_linear.spi1d, interpolation: linear}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear ProTune, direction: inverse}
+
+  - !<ColorSpace> #N-Log
+    name: N-Log
+    aliases: []
+    family: Camera Log Encodings
+    equalitygroup: ""
+    bitdepth: unknown
+    description: Nikons N-Log with bt.2020 primaries
+    isdata: false
+    allocation: uniform
+    from_scene_reference: !<GroupTransform>
+      children:
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear BT.2020 I-D65}
+        - !<FileTransform> {src: N_Log_Curve_EOTF.spi1d, interpolation: linear, direction: inverse}
+    to_scene_reference: !<GroupTransform>
+      children:
+        - !<FileTransform> {src: N_Log_Curve_EOTF.spi1d, interpolation: linear}
+        - !<ColorSpaceTransform> {src: Linear CIE-XYZ I-E, dst: Linear BT.2020 I-D65, direction: inverse}
+
+
 
 #Image Formation Stuff
   - !<ColorSpace> #Filmic sRGB
