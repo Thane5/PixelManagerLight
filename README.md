@@ -10,8 +10,11 @@ Has not been tested extensively, there will be bugs.
 Readme coming soon™.
 
 ## My Fork:
-I removed a bunch of color spaces to make the drop down menu more compact and easier to read.
+No big changes, all i did is switch to a "minimal" preset for inactive_colorspaces which already existed in the config. 
+
+This makes the color space dropdown much more compact.
 
 
-![image](https://github.com/Thane5/PixelManagerLight/assets/13683581/53e0f16a-3682-4d84-b763-87968c85ddaf)
+![image](https://github.com/Thane5/PixelManagerLight/assets/13683581/7b52aeac-c18b-4585-a391-563abb4357ad)
+
 
